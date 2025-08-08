@@ -243,83 +243,83 @@ body {
     border: 2px solid rgba(251, 176, 64, 0.1);
 }
 
-/* Floating Words Animation */
+/* Floating Words Animation - 35 Languages */
 .floating-words {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
+    z-index: 1;
 }
 
 .word {
     position: absolute;
     font-weight: 600;
-    font-size: 1.2rem;
     opacity: 0;
-    animation: wordFloat 8s infinite;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-.word-1 {
-    top: 10%;
-    left: -10%;
-    color: #06B6D4;
-    animation-delay: 0s;
-}
-
-.word-2 {
-    top: 5%;
-    right: 10%;
-    color: #8B5CF6;
-    animation-delay: 1s;
-}
-
-.word-3 {
-    top: 30%;
-    right: -5%;
-    color: #F59E0B;
-    animation-delay: 2s;
-}
-
-.word-4 {
-    bottom: 30%;
-    right: 5%;
-    color: #EC4899;
-    animation-delay: 3s;
-}
-
-.word-5 {
-    bottom: 20%;
-    left: -5%;
-    color: #10B981;
-    animation-delay: 4s;
-}
-
-.word-6 {
-    top: 50%;
-    left: -8%;
-    color: #6366F1;
-    animation-delay: 5s;
-}
-
-.word-7 {
-    bottom: 10%;
-    right: 20%;
-    color: #F97316;
-    animation-delay: 6s;
-}
-
-.word-8 {
-    top: 25%;
-    left: 15%;
-    color: #0EA5E9;
-    background: white;
+    animation: wordFloat 15s infinite;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    animation-delay: 7s;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+}
+
+/* East Asian Languages - Top Left Quadrant */
+.word-1 { top: 5%; left: 3%; color: #DC2626; animation-delay: 0s; font-size: 1.1rem; }
+.word-2 { top: 12%; left: 15%; color: #EA580C; animation-delay: 0.4s; }
+.word-3 { top: 8%; left: 28%; color: #0891B2; animation-delay: 0.8s; font-size: 1rem; }
+.word-4 { top: 18%; left: 8%; color: #7C3AED; animation-delay: 1.2s; }
+
+/* Southeast Asian Languages - Top Right Quadrant */
+.word-5 { top: 3%; right: 5%; color: #059669; animation-delay: 1.6s; }
+.word-6 { top: 10%; right: 18%; color: #DB2777; animation-delay: 2s; font-size: 1.1rem; }
+.word-7 { top: 15%; right: 30%; color: #0EA5E9; animation-delay: 2.4s; }
+.word-8 { top: 22%; right: 10%; color: #8B5CF6; animation-delay: 2.8s; font-size: 1.2rem; }
+.word-9 { top: 6%; right: 35%; color: #F59E0B; animation-delay: 3.2s; }
+.word-10 { top: 25%; right: 25%; color: #EC4899; animation-delay: 3.6s; }
+.word-11 { top: 30%; right: 15%; color: #10B981; animation-delay: 4s; font-size: 1.1rem; }
+.word-12 { top: 20%; right: 40%; color: #F97316; animation-delay: 4.4s; }
+
+/* South Asian Languages - Middle Band */
+.word-13 { top: 35%; left: 5%; color: #4F46E5; animation-delay: 4.8s; font-size: 1.2rem; }
+.word-14 { top: 40%; left: 20%; color: #DC2626; animation-delay: 5.2s; font-size: 1.1rem; }
+.word-15 { top: 45%; left: 35%; color: #059669; animation-delay: 5.6s; }
+.word-16 { top: 38%; right: 35%; color: #7C3AED; animation-delay: 6s; font-size: 1rem; }
+.word-17 { top: 42%; right: 20%; color: #EA580C; animation-delay: 6.4s; font-size: 1.1rem; }
+.word-18 { top: 48%; right: 8%; color: #0891B2; animation-delay: 6.8s; }
+.word-19 { top: 35%; left: 48%; color: #10B981; animation-delay: 7.2s; font-size: 1.2rem; }
+
+/* European Languages - Lower Middle Band */
+.word-20 { top: 55%; left: 10%; color: #0EA5E9; animation-delay: 7.6s; font-size: 1.3rem; }
+.word-21 { top: 60%; left: 25%; color: #F59E0B; animation-delay: 8s; font-size: 1.1rem; }
+.word-22 { top: 52%; left: 40%; color: #8B5CF6; animation-delay: 8.4s; font-size: 1.2rem; }
+.word-23 { top: 58%; right: 40%; color: #EC4899; animation-delay: 8.8s; }
+.word-24 { top: 65%; right: 25%; color: #DB2777; animation-delay: 9.2s; font-size: 1.1rem; }
+.word-25 { top: 55%; right: 12%; color: #10B981; animation-delay: 9.6s; }
+.word-26 { top: 62%; right: 50%; color: #F97316; animation-delay: 10s; }
+
+/* Eastern European Languages - Bottom Section */
+.word-27 { bottom: 25%; left: 8%; color: #DC2626; animation-delay: 10.4s; font-size: 1.1rem; }
+.word-28 { bottom: 20%; left: 22%; color: #0891B2; animation-delay: 10.8s; }
+.word-29 { bottom: 28%; left: 38%; color: #059669; animation-delay: 11.2s; }
+.word-30 { bottom: 15%; left: 50%; color: #7C3AED; animation-delay: 11.6s; }
+
+/* Middle Eastern & African Languages - Bottom Right */
+.word-31 { bottom: 30%; right: 35%; color: #EA580C; animation-delay: 12s; font-size: 1.2rem; }
+.word-32 { bottom: 22%; right: 20%; color: #4F46E5; animation-delay: 12.4s; font-size: 1.1rem; }
+.word-33 { bottom: 18%; right: 45%; color: #DB2777; animation-delay: 12.8s; }
+.word-34 { bottom: 10%; right: 30%; color: #10B981; animation-delay: 13.2s; font-size: 1.1rem; }
+.word-35 { bottom: 25%; right: 10%; color: #F59E0B; animation-delay: 13.6s; font-size: 1.2rem; }
+
+/* Special RTL text styling */
+.word[data-lang="ar"],
+.word[data-lang="fa"],
+.word[data-lang="he"],
+.word[data-lang="ur"] {
+    direction: rtl;
 }
 
 /* Sparkles */
@@ -373,13 +373,49 @@ body {
 }
 
 @keyframes wordFloat {
-    0%, 100% {
+    0% {
         opacity: 0;
-        transform: translateY(20px) scale(0.8);
+        transform: translateY(30px) translateX(0) scale(0.7) rotate(-5deg);
     }
-    20%, 80% {
+    10% {
+        opacity: 0.8;
+        transform: translateY(15px) translateX(10px) scale(0.9) rotate(0deg);
+    }
+    20% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0) translateX(5px) scale(1) rotate(3deg);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-10px) translateX(-5px) scale(1.05) rotate(-2deg);
+    }
+    40% {
+        opacity: 1;
+        transform: translateY(-5px) translateX(8px) scale(1.02) rotate(1deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0) translateX(-3px) scale(1) rotate(0deg);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(5px) translateX(5px) scale(1.02) rotate(-1deg);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-8px) translateX(-8px) scale(1.05) rotate(2deg);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    }
+    90% {
+        opacity: 0.8;
+        transform: translateY(15px) translateX(-10px) scale(0.9) rotate(-3deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(30px) translateX(0) scale(0.7) rotate(5deg);
     }
 }
 
@@ -1049,6 +1085,15 @@ body {
     }
     
     .floating-words {
+        display: block;
+    }
+    
+    .floating-words .word {
+        font-size: 0.8rem !important;
+        padding: 0.2rem 0.5rem;
+    }
+    
+    .floating-words .word:nth-child(n+20) {
         display: none;
     }
     
