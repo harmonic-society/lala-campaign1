@@ -1,0 +1,154 @@
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Modal functionality
+function openModal() {
+    document.getElementById('applicationModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('applicationModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('applicationModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// Form submission
+document.getElementById('applicationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+    
+    // Show success message
+    alert('お申し込みありがとうございます！24時間以内にご連絡させていただきます。');
+    
+    // Reset form and close modal
+    this.reset();
+    closeModal();
+    
+    // Here you would normally send the data to a server
+    console.log('Form data:', data);
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = '0';
+    observer.observe(section);
+});
+
+// Header scroll effect
+let lastScroll = 0;
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+    } else {
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Countdown timer for limited offer (optional feature)
+function updateCountdown() {
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 7); // 7 days from now
+    
+    const now = new Date();
+    const timeLeft = endDate - now;
+    
+    if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        
+        // You can display this countdown somewhere if needed
+        console.log(`Offer ends in: ${days}日 ${hours}時間 ${minutes}分`);
+    }
+}
+
+// Update countdown every minute
+setInterval(updateCountdown, 60000);
+updateCountdown();
+
+// Add hover effects to cards
+document.querySelectorAll('.problem-card, .benefit-card, .testimonial-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// Add loading animation
+window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+// Track CTA button clicks for analytics
+document.querySelectorAll('.cta-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        console.log('CTA clicked:', this.textContent);
+        // Here you would send analytics data
+    });
+});
