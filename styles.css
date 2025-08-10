@@ -955,70 +955,245 @@ body {
     margin: 2rem 0 !important;
 }
 
-/* Solution Section */
+/* Solution Section - Redesigned */
 .solution-section {
-    padding: 80px 0;
-    background: var(--bg-light);
+    padding: 100px 0;
+    background: linear-gradient(135deg, #F0F9FF 0%, #FFF5F0 50%, #F5F3FF 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -200px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 25s infinite ease-in-out;
 }
 
 .solution-flow {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin: 3rem 0;
+    align-items: stretch;
+    gap: 1rem;
+    margin: 4rem 0;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .flow-item {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 25px;
     text-align: center;
-    min-width: 200px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.flow-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.flow-item:hover::before {
+    opacity: 1;
+}
+
+.flow-item-1 {
+    animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.flow-item-1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(107, 70, 193, 0.15);
+}
+
+.flow-item-2 {
+    animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.flow-item-2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(249, 115, 22, 0.15);
+}
+
+.flow-item-3 {
+    animation: fadeInUp 0.6s ease 0.6s both;
+}
+
+.flow-item-3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(6, 182, 212, 0.15);
+}
+
+.flow-number-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
 }
 
 .flow-number {
-    background: var(--gradient);
-    color: var(--white);
-    width: 50px;
-    height: 50px;
+    background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    color: white;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
     font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.flow-item-2 .flow-number {
+    background: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+}
+
+.flow-item-3 .flow-number {
+    background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+}
+
+.flow-spark {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 1.5rem;
+    animation: sparkle 2s infinite;
+    z-index: 3;
 }
 
 .flow-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.flow-item p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
     font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
-.flow-item span {
+.time-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFE5EC 0%, #FFD4E1 100%);
+    color: #EC4899;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.time-badge.optimal {
+    background: linear-gradient(135deg, #D4F4E7 0%, #BFF0D6 100%);
+    color: #059669;
+}
+
+.flow-content {
+    text-align: left;
+}
+
+.flow-main {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.flow-sub {
     font-size: 0.9rem;
+    line-height: 1.5;
     color: var(--text-light);
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.waku-text {
+    background: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    display: inline-block;
+    animation: pulse 2s infinite;
 }
 
 .flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 -0.5rem;
+}
+
+.arrow-line {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    position: relative;
+    animation: arrowPulse 2s infinite;
+}
+
+.arrow-tip {
     font-size: 2rem;
     color: var(--primary-color);
+    margin-left: -10px;
+    animation: arrowMove 2s infinite;
+}
+
+@keyframes arrowPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes arrowMove {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
 }
 
 .solution-caption {
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: var(--primary-color);
+    background: linear-gradient(135deg, #6B46C1 0%, #F97316 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 3rem;
+    animation: fadeIn 1s ease 0.8s both;
 }
 
 /* Benefit Section */
@@ -1637,6 +1812,47 @@ body {
         padding: 40px 0;
     }
     
+    .solution-section {
+        padding: 60px 0;
+    }
+    
+    .flow-item {
+        padding: 2rem 1.5rem;
+        min-width: 260px;
+    }
+    
+    .flow-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    .flow-item h4 {
+        font-size: 1.2rem;
+    }
+    
+    .time-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    .flow-main {
+        font-size: 0.9rem;
+    }
+    
+    .flow-sub {
+        font-size: 0.8rem;
+    }
+    
+    .waku-text {
+        font-size: 1rem;
+    }
+    
+    .solution-caption {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
     .intro-badge {
         font-size: 1.2rem;
         padding: 0.5rem 1.5rem;
@@ -1693,6 +1909,28 @@ body {
     
     .flow-arrow {
         display: none;
+    }
+    
+    .solution-flow {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .flow-item {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .flow-content {
+        text-align: center;
+    }
+    
+    .flow-main {
+        font-size: 0.95rem;
+    }
+    
+    .flow-sub {
+        font-size: 0.85rem;
     }
     
     .price-display {
