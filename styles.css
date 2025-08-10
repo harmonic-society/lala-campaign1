@@ -533,6 +533,328 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
+/* Introduction Section */
+.introduction-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FFF9FC 0%, #FFF5F0 50%, #FFF0F8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.introduction-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(251, 207, 232, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.introduction-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 235, 205, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s infinite ease-in-out reverse;
+}
+
+.intro-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.intro-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+    animation: bounceIn 1s ease;
+    position: relative;
+}
+
+.intro-decoration {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.deco-icon {
+    font-size: 2rem;
+    animation: sparkle 3s infinite;
+}
+
+.deco-icon:nth-child(1) {
+    position: absolute;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.deco-icon:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    animation-delay: 1s;
+}
+
+.deco-icon:nth-child(3) {
+    position: absolute;
+    right: -100px;
+    animation-delay: 2s;
+}
+
+.intro-content {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.intro-main-text {
+    margin-bottom: 2.5rem;
+}
+
+.intro-text-line1,
+.intro-text-line2 {
+    font-size: 1.3rem;
+    line-height: 2;
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+}
+
+.highlight-gradient {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1.4rem;
+    position: relative;
+    display: inline-block;
+    animation: glow 2s ease-in-out infinite;
+}
+
+.dream-text {
+    color: #FF6B6B;
+    font-weight: bold;
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.dream-text::after {
+    content: '✨';
+    position: absolute;
+    right: -25px;
+    top: -5px;
+    font-size: 0.8rem;
+    animation: twinkle 2s infinite;
+}
+
+.challenge-text {
+    color: #FFD93D;
+    font-weight: bold;
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.challenge-text::after {
+    content: '🚀';
+    position: absolute;
+    right: -30px;
+    top: -5px;
+    font-size: 0.8rem;
+    animation: rocket 3s infinite;
+}
+
+.intro-cta-wrapper {
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 217, 61, 0.1) 100%);
+    border-radius: 20px;
+    position: relative;
+}
+
+.arrow-decoration {
+    margin-bottom: 1rem;
+}
+
+.arrow-icon {
+    font-size: 2.5rem;
+    color: #FF6B6B;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+.intro-cta-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.dream-highlight,
+.challenge-highlight {
+    font-weight: bold;
+    position: relative;
+    padding: 0 0.3rem;
+}
+
+.dream-highlight {
+    background: linear-gradient(180deg, transparent 50%, rgba(255, 107, 107, 0.3) 50%);
+}
+
+.challenge-highlight {
+    background: linear-gradient(180deg, transparent 50%, rgba(255, 217, 61, 0.3) 50%);
+}
+
+.cta-emphasis {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite;
+}
+
+.intro-visual {
+    position: relative;
+    height: 100px;
+    margin-top: -2rem;
+}
+
+.language-bubbles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bubble {
+    position: absolute;
+    background: white;
+    color: var(--text-dark);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: bubbleFloat 6s infinite ease-in-out;
+    white-space: nowrap;
+}
+
+.bubble-1 {
+    top: 0;
+    left: 10%;
+    background: linear-gradient(135deg, #FFE5EC 0%, #FFD4E1 100%);
+    animation-delay: 0s;
+}
+
+.bubble-2 {
+    top: 20px;
+    left: 30%;
+    background: linear-gradient(135deg, #E8F4FD 0%, #D4E8FC 100%);
+    animation-delay: 1s;
+}
+
+.bubble-3 {
+    top: 0;
+    left: 50%;
+    background: linear-gradient(135deg, #FFF9E6 0%, #FFF4CC 100%);
+    animation-delay: 2s;
+}
+
+.bubble-4 {
+    top: 20px;
+    right: 30%;
+    background: linear-gradient(135deg, #F0E6FF 0%, #E6D4FF 100%);
+    animation-delay: 3s;
+}
+
+.bubble-5 {
+    top: 0;
+    right: 15%;
+    background: linear-gradient(135deg, #FFE6F0 0%, #FFD4E6 100%);
+    animation-delay: 4s;
+}
+
+.bubble-6 {
+    top: 40px;
+    right: 5%;
+    background: linear-gradient(135deg, #E6FFF0 0%, #D4FFE6 100%);
+    animation-delay: 5s;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        transform: translateY(-15px) scale(1.05);
+    }
+    50% {
+        transform: translateY(5px) scale(0.95);
+    }
+    75% {
+        transform: translateY(-10px) scale(1.02);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+@keyframes rocket {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* Problem Section */
 .problem-section {
     padding: 80px 0;
@@ -1235,6 +1557,122 @@ body {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* Introduction Section Responsive */
+@media (max-width: 1024px) {
+    .intro-decoration {
+        display: none;
+    }
+    
+    .intro-content {
+        padding: 1.5rem;
+    }
+    
+    .language-bubbles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        height: auto;
+    }
+    
+    .bubble {
+        position: relative;
+        animation: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .introduction-section {
+        padding: 60px 0;
+    }
+    
+    .intro-badge {
+        font-size: 1.5rem;
+        padding: 0.6rem 2rem;
+    }
+    
+    .intro-text-line1,
+    .intro-text-line2 {
+        font-size: 1.1rem;
+    }
+    
+    .highlight-gradient,
+    .dream-text,
+    .challenge-text {
+        font-size: 1.2rem;
+    }
+    
+    .dream-text::after,
+    .challenge-text::after {
+        display: none;
+    }
+    
+    .intro-cta-text {
+        font-size: 1rem;
+    }
+    
+    .cta-emphasis {
+        font-size: 1.2rem;
+    }
+    
+    .arrow-icon {
+        font-size: 2rem;
+    }
+    
+    .intro-visual {
+        margin-top: 1rem;
+    }
+    
+    .bubble {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .introduction-section {
+        padding: 40px 0;
+    }
+    
+    .intro-badge {
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+    }
+    
+    .intro-text-line1,
+    .intro-text-line2 {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+    
+    .highlight-gradient,
+    .dream-text,
+    .challenge-text {
+        font-size: 1rem;
+    }
+    
+    .intro-cta-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .intro-cta-text {
+        font-size: 0.9rem;
+    }
+    
+    .cta-emphasis {
+        font-size: 1.1rem;
+    }
+    
+    .language-bubbles {
+        gap: 0.5rem;
+    }
+    
+    .bubble {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
     }
 }
 
