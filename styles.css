@@ -13,6 +13,8 @@
     --bg-light: #F9FAFB;
     --white: #FFFFFF;
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --line-green: #00B900;
+    --line-gradient: linear-gradient(135deg, #00C300 0%, #00B900 100%);
 }
 
 body {
@@ -71,15 +73,17 @@ body {
 }
 
 .cta-btn-header {
-    background: var(--gradient);
+    background: var(--line-gradient);
     color: var(--white) !important;
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 185, 0, 0.2);
 }
 
 .cta-btn-header:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 185, 0, 0.3);
 }
 
 /* Hero Section - Redesigned */
@@ -169,7 +173,7 @@ body {
 }
 
 .cta-btn.primary.pulse {
-    background: linear-gradient(135deg, #FBB040 0%, #F97316 100%);
+    background: var(--line-gradient);
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -187,7 +191,7 @@ body {
 
 .cta-btn.primary.pulse:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(251, 176, 64, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 185, 0, 0.4);
 }
 
 .btn-text {
@@ -523,14 +527,14 @@ body {
 }
 
 .cta-btn.primary {
-    background: var(--white);
-    color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: var(--line-gradient);
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(0, 185, 0, 0.2);
 }
 
 .cta-btn.primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 40px rgba(0, 185, 0, 0.3);
 }
 
 /* Introduction Section */
