@@ -729,10 +729,43 @@ body {
     background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 217, 61, 0.1) 100%);
     border-radius: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.intro-image-container {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeInScale 1s ease;
+}
+
+.intro-feature-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .arrow-decoration {
-    margin-bottom: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .arrow-icon {
@@ -746,6 +779,8 @@ body {
     font-size: 1.2rem;
     line-height: 1.8;
     color: var(--text-dark);
+    text-align: center;
+    margin-top: 0;
 }
 
 .dream-highlight,
@@ -2007,6 +2042,10 @@ body {
     
     .intro-cta-wrapper {
         padding: 1.5rem;
+    }
+    
+    .intro-image-container {
+        max-width: 100%;
     }
     
     .intro-cta-text {
