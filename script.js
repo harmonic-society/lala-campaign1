@@ -35,26 +35,15 @@ window.onclick = function(event) {
     }
 }
 
-// Form submission
-document.getElementById('applicationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
-    
-    // Show success message
-    alert('お申し込みありがとうございます！24時間以内にご連絡させていただきます。');
-    
-    // Reset form and close modal
-    this.reset();
-    closeModal();
-    
-    // Here you would normally send the data to a server
-    console.log('Form data:', data);
+// Track LINE registration modal views
+document.addEventListener('DOMContentLoaded', function() {
+    // Log when LINE registration modal is opened
+    const originalOpenModal = window.openModal;
+    window.openModal = function() {
+        originalOpenModal();
+        console.log('LINE registration modal opened');
+        // Here you would track analytics for modal views
+    };
 });
 
 // Intersection Observer for fade-in animations

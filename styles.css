@@ -1700,6 +1700,104 @@ body {
     transform: translateY(-2px);
 }
 
+/* LINE Registration Styles */
+.line-registration {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.line-message {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.qr-code-container {
+    margin: 2rem 0;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #00B900;
+    border-radius: 10px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 185, 0, 0.1);
+}
+
+.qr-caption {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.or-text {
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    color: var(--text-light);
+    position: relative;
+}
+
+.or-text::before,
+.or-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #E5E7EB;
+}
+
+.or-text::before {
+    left: 0;
+}
+
+.or-text::after {
+    right: 0;
+}
+
+.line-add-button {
+    display: inline-block;
+    margin: 1rem 0;
+    transition: transform 0.3s;
+}
+
+.line-add-button:hover {
+    transform: scale(1.05);
+}
+
+.line-benefits {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #E5E7EB;
+}
+
+.line-benefits h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #00B900;
+}
+
+.line-benefits ul {
+    list-style: none;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.line-benefits li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.line-benefits li::before {
+    content: '';
+    margin-right: 0.5rem;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

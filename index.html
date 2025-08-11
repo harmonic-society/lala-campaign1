@@ -16,7 +16,7 @@
                 <a href="#solution">サービス</a>
                 <a href="#evidence">実績</a>
                 <a href="#offer">特別提案</a>
-                <a href="#cta" class="cta-btn-header">体験レッスン申込</a>
+                <a href="#cta" class="cta-btn-header">LINE友達登録</a>
             </nav>
         </div>
     </header>
@@ -35,8 +35,8 @@
                     <span class="highlight-text">"続けられる学び"</span>をつくります。</p>
                     <div class="hero-actions">
                         <button class="cta-btn primary pulse" onclick="openModal()">
-                            <span class="btn-text">今すぐ体験レッスンを申し込む</span>
-                            <span class="btn-price">1,100円（税込）</span>
+                            <span class="btn-text">今すぐLINE友達登録</span>
+                            <span class="btn-price">無料で相談</span>
                         </button>
                         <div class="language-badges">
                             <span class="badge">35言語対応</span>
@@ -399,10 +399,10 @@
             </h2>
             <p class="cta-subtitle">まずは、30分の体験レッスンから始めてみませんか？</p>
             <button class="cta-btn primary large" onclick="openModal()">
-                体験レッスンに申し込む
+                LINE友達登録する
                 <span class="btn-subtitle">今すぐWAKU²な一歩を</span>
             </button>
-            <p class="cta-note">※お申し込み後、24時間以内にご連絡いたします</p>
+            <p class="cta-note">※LINE登録後、お気軽にご相談ください</p>
         </div>
     </section>
 
@@ -420,39 +420,27 @@
     <div id="applicationModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>体験レッスン申込フォーム</h2>
-            <form id="applicationForm">
-                <div class="form-group">
-                    <label>お名前 *</label>
-                    <input type="text" name="name" required>
+            <h2>LINE友達登録</h2>
+            <div class="line-registration">
+                <p class="line-message">下記のQRコードを読み取るか、<br>「友だち追加」ボタンからLINE友達登録をお願いします。</p>
+                <div class="qr-code-container">
+                    <img src="https://via.placeholder.com/200x200.png?text=LINE+QR+Code" alt="LINE QRコード" class="qr-code">
+                    <p class="qr-caption">QRコードを読み取ってください</p>
                 </div>
-                <div class="form-group">
-                    <label>メールアドレス *</label>
-                    <input type="email" name="email" required>
+                <p class="or-text">または</p>
+                <a href="https://lin.ee/example" class="line-add-button" target="_blank">
+                    <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
+                </a>
+                <div class="line-benefits">
+                    <h3>LINE登録で得られる特典</h3>
+                    <ul>
+                        <li>✨ 無料で学習相談</li>
+                        <li>📚 言語学習のコツをお届け</li>
+                        <li>🎁 友達限定の特別割引</li>
+                        <li>💬 いつでも気軽に質問OK</li>
+                    </ul>
                 </div>
-                <div class="form-group">
-                    <label>電話番号 *</label>
-                    <input type="tel" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label>希望言語 *</label>
-                    <select name="language" required>
-                        <option value="">選択してください</option>
-                        <option value="english">英語</option>
-                        <option value="chinese">中国語</option>
-                        <option value="korean">韓国語</option>
-                        <option value="french">フランス語</option>
-                        <option value="spanish">スペイン語</option>
-                        <option value="vietnamese">ベトナム語</option>
-                        <option value="other">その他</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>学習目的</label>
-                    <textarea name="purpose" rows="3"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">申し込む</button>
-            </form>
+            </div>
         </div>
     </div>
 
