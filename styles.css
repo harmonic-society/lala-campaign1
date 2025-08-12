@@ -1486,6 +1486,17 @@ body {
     border-radius: 25px;
     font-weight: bold;
     animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+@media (max-width: 767px) {
+    .offer-badge {
+        position: static;
+        display: inline-block;
+        margin: 0 auto 1rem;
+        right: auto;
+        top: auto;
+    }
 }
 
 .offer-title {
