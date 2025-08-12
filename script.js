@@ -1,10 +1,38 @@
+// Mobile Menu Toggle
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileNav = document.getElementById('mobileNav');
+
+if (mobileMenuToggle && mobileNav) {
+    mobileMenuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+}
+
+// Close mobile menu function
+function closeMobileMenu() {
+    if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+    }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    if (mobileNav && mobileMenuToggle) {
+        if (!mobileNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+            closeMobileMenu();
+        }
+    }
+});
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const headerOffset = 80;
+            const headerOffset = window.innerWidth < 768 ? 60 : 80;
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -116,14 +144,57 @@ document.querySelectorAll('.problem-card, .benefit-card, .testimonial-card').for
     });
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+// Parallax effect for hero section (disabled on mobile for performance)
+if (window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+    });
+}
+
+// Mobile touch optimization
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', function(event) {
+    touchStartX = event.changedTouches[0].screenX;
+}, false);
+
+document.addEventListener('touchend', function(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    // Add swipe gestures if needed for navigation
+    if (touchEndX < touchStartX - 50) {
+        // Swiped left
     }
-});
+    if (touchEndX > touchStartX + 50) {
+        // Swiped right
+    }
+}
+
+// Optimize animations for mobile
+if (window.innerWidth < 768) {
+    // Reduce animation complexity on mobile
+    document.querySelectorAll('.floating-words').forEach(el => {
+        el.style.display = 'none';
+    });
+}
+
+// Viewport height fix for mobile browsers
+function setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setViewportHeight();
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', setViewportHeight);
 
 // Add loading animation
 window.addEventListener('load', () => {

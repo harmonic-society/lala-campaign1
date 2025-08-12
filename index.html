@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaLa GLOBAL LANGUAGE - あなたの「やってみたい」を応援</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-first.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">LaLa GLOBAL LANGUAGE</div>
+            
+            <!-- Desktop Navigation -->
             <nav class="nav">
                 <a href="#introduction">はじめに</a>
                 <a href="#solution">サービス</a>
@@ -21,7 +23,26 @@
                     <span>LINE友達登録</span>
                 </a>
             </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#introduction" onclick="closeMobileMenu()">はじめに</a>
+            <a href="#solution" onclick="closeMobileMenu()">サービス</a>
+            <a href="#evidence" onclick="closeMobileMenu()">実績</a>
+            <a href="#offer" onclick="closeMobileMenu()">特別提案</a>
+            <a href="#cta" class="cta-btn-header" onclick="closeMobileMenu()">
+                <img src="/images/LINE_Brand_icon.png" alt="LINE" class="line-icon">
+                <span>LINE友達登録</span>
+            </a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
