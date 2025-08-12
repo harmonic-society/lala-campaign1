@@ -1944,6 +1944,15 @@ body {
     }
 }
 
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 /* Introduction Section Responsive */
 @media (max-width: 1024px) {
     .intro-decoration {
@@ -2114,6 +2123,11 @@ body {
     display: none;
 }
 
+/* Mobile Fixed Footer CTA - Hidden on Desktop */
+.mobile-footer-cta {
+    display: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero-title {
@@ -2181,23 +2195,56 @@ body {
         font-size: 1rem;
     }
     
+    /* Remove CTA from mobile navigation menu */
     .mobile-nav .cta-btn-header {
-        margin: 1rem 20px;
+        display: none;
+    }
+    
+    /* Mobile Fixed Footer CTA Bar */
+    .mobile-footer-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 1001;
+        padding: 0.75rem 1rem;
+        animation: slideInUp 0.5s ease;
+    }
+    
+    .mobile-footer-cta-button {
+        width: 100%;
         background: var(--line-gradient);
-        color: var(--white) !important;
-        padding: 0.75rem 1.5rem;
+        color: var(--white);
+        padding: 0.9rem 1.5rem;
+        border: none;
         border-radius: 25px;
-        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        border-bottom: none;
+        box-shadow: 0 4px 15px rgba(0, 185, 0, 0.3);
+        cursor: pointer;
+        transition: all 0.3s;
     }
     
-    .mobile-nav .cta-btn-header .line-icon {
-        width: 20px;
-        height: 20px;
+    .mobile-footer-cta-button:active {
+        transform: scale(0.98);
+    }
+    
+    .mobile-footer-cta-button .line-icon {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+    
+    /* Add padding to body to prevent content from being hidden behind footer CTA */
+    body {
+        padding-bottom: 80px;
     }
     
     /* Hide desktop nav on mobile */
