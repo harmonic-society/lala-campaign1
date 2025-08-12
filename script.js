@@ -3,9 +3,18 @@ const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const mobileNav = document.getElementById('mobileNav');
 
 if (mobileMenuToggle && mobileNav) {
+    // Ensure mobile nav is initially hidden
+    mobileNav.style.display = 'none';
+    
     mobileMenuToggle.addEventListener('click', function() {
         this.classList.toggle('active');
         mobileNav.classList.toggle('active');
+        // Toggle display when menu is clicked
+        if (mobileNav.classList.contains('active')) {
+            mobileNav.style.display = 'block';
+        } else {
+            mobileNav.style.display = 'none';
+        }
     });
 }
 
@@ -14,6 +23,7 @@ function closeMobileMenu() {
     if (mobileMenuToggle && mobileNav) {
         mobileMenuToggle.classList.remove('active');
         mobileNav.classList.remove('active');
+        mobileNav.style.display = 'none';
     }
 }
 
