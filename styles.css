@@ -50,10 +50,17 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.logo-text {
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
 }
 
 .nav {
@@ -2136,6 +2143,80 @@ body {
     
     .section-title {
         font-size: 1.8rem;
+    }
+    
+    /* Mobile header adjustments */
+    .header .container {
+        padding: 0.75rem 16px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    .logo::before {
+        content: '🌍';
+        font-size: 1.2rem;
+        animation: rotate 4s linear infinite;
+    }
+    
+    .logo-text {
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #F97316 100%);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        letter-spacing: -0.5px;
+        text-shadow: 0 2px 4px rgba(107, 70, 193, 0.1);
+        animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    .logo-text::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+        transform: scaleX(0);
+        transform-origin: center;
+        animation: underlineExpand 3s ease-in-out infinite;
+    }
+    
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes shimmer {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+    
+    @keyframes underlineExpand {
+        0%, 100% {
+            transform: scaleX(0);
+            opacity: 0;
+        }
+        50% {
+            transform: scaleX(1);
+            opacity: 1;
+        }
     }
     
     /* Show mobile menu toggle on mobile */
