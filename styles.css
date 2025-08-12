@@ -51,7 +51,8 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 }
 
 .logo-text {
@@ -61,6 +62,7 @@ body {
     -webkit-text-fill-color: transparent;
     position: relative;
     display: inline-block;
+    white-space: nowrap;
 }
 
 .nav {
@@ -2128,6 +2130,11 @@ body {
 
 .mobile-nav {
     display: none;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    opacity: 0;
 }
 
 /* Mobile Fixed Footer CTA - Hidden on Desktop */
@@ -2219,21 +2226,37 @@ body {
     }
     
     /* Mobile header adjustments */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
     .header .container {
         padding: 0.75rem 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 56px;
     }
     
     .logo {
-        font-size: 1rem;
+        font-size: 0.95rem;
         position: relative;
         display: flex;
         align-items: center;
         gap: 0.3rem;
+        flex-shrink: 0;
+        z-index: 10;
     }
     
     .logo::before {
         content: '🌍';
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         animation: rotate 4s linear infinite;
     }
     
@@ -2246,21 +2269,14 @@ body {
         -webkit-text-fill-color: transparent;
         position: relative;
         letter-spacing: -0.5px;
-        text-shadow: 0 2px 4px rgba(107, 70, 193, 0.1);
+        display: inline-block;
+        white-space: nowrap;
         animation: shimmer 3s ease-in-out infinite;
     }
     
+    /* Remove underline on mobile for cleaner look */
     .logo-text::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
-        transform: scaleX(0);
-        transform-origin: center;
-        animation: underlineExpand 3s ease-in-out infinite;
+        display: none;
     }
     
     @keyframes rotate {
@@ -2322,7 +2338,7 @@ body {
         transform: rotate(-45deg) translate(5px, -5px);
     }
     
-    /* Mobile navigation menu */
+    /* Mobile navigation menu - initially hidden */
     .mobile-nav {
         display: block;
         position: fixed;
@@ -2334,10 +2350,14 @@ body {
         transform: translateY(-100%);
         transition: transform 0.3s ease;
         z-index: 999;
+        opacity: 0;
+        pointer-events: none;
     }
     
     .mobile-nav.active {
         transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
     
     .mobile-nav a {
