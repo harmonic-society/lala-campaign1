@@ -151,7 +151,7 @@ body {
 
 /* Mobile Hero Section - Background Image with Overlay */
 .hero {
-    background-image: url('/images/AdobeStock_357198260.jpeg');
+    background-image: url('images/AdobeStock_357198260.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -239,12 +239,11 @@ body {
     margin-bottom: 1rem;
     font-weight: 900;
     color: #FFFFFF;
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.8),
-        0 0 20px rgba(0,0,0,0.5),
-        0 0 40px rgba(249, 115, 22, 0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     letter-spacing: -0.02em;
     animation: titleReveal 1s ease-out;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes titleReveal {
@@ -276,9 +275,8 @@ body {
     margin-bottom: 0.5rem;
     color: #FFFFFF;
     animation: slideInRight 0.8s ease-out 0.2s both;
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.9),
-        0 0 30px rgba(255, 215, 0, 0.4);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+    -webkit-font-smoothing: antialiased;
 }
 
 @keyframes slideInLeft {
@@ -307,25 +305,17 @@ body {
     color: #FFD700;
     font-weight: 900;
     position: relative;
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.9),
-        0 0 20px rgba(255, 215, 0, 0.5),
-        0 0 40px rgba(255, 215, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
     animation: goldPulse 2s ease-in-out infinite;
+    -webkit-font-smoothing: antialiased;
 }
 
 @keyframes goldPulse {
     0%, 100% { 
-        text-shadow: 
-            2px 2px 4px rgba(0,0,0,0.9),
-            0 0 20px rgba(255, 215, 0, 0.5),
-            0 0 40px rgba(255, 215, 0, 0.3);
+        color: #FFD700;
     }
     50% { 
-        text-shadow: 
-            2px 2px 4px rgba(0,0,0,0.9),
-            0 0 30px rgba(255, 215, 0, 0.7),
-            0 0 60px rgba(255, 215, 0, 0.5);
+        color: #FFC700;
     }
 }
 
@@ -352,9 +342,9 @@ body {
     padding: 0 var(--gap-small);
     font-weight: 600;
     animation: subtitleFade 1.2s ease-out 0.3s both;
-    text-shadow: 
-        1px 1px 3px rgba(0,0,0,0.8),
-        0 0 15px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes subtitleFade {
@@ -375,7 +365,6 @@ body {
     font-weight: 700;
     display: inline-block;
     animation: pulse 2s ease-in-out infinite;
-    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -1392,7 +1381,7 @@ body {
     /* Tablet Hero */
     .hero {
         padding: 100px 0 60px;
-        background-image: url('/images/AdobeStock_357198260.jpeg');
+        background-image: url('images/AdobeStock_357198260.jpeg');
         background-size: cover;
         background-position: center;
     }
@@ -1528,7 +1517,7 @@ body {
         min-height: 100vh;
         display: flex;
         align-items: center;
-        background-image: url('/images/AdobeStock_357198260.jpeg');
+        background-image: url('images/AdobeStock_357198260.jpeg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
