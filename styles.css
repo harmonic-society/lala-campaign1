@@ -1183,6 +1183,14 @@ body {
     animation: pulse 2s infinite;
 }
 
+/* Mobile override for emphasis text */
+@media (max-width: 768px) {
+    .emphasis {
+        font-size: 0.95rem !important;
+        margin: 1.5rem 0 !important;
+    }
+}
+
 /* Solution Section - Redesigned */
 .solution-section {
     padding: 100px 0;
@@ -2988,30 +2996,42 @@ body {
     
     .mobile-footer-cta-button {
         width: 100%;
-        background: var(--line-gradient);
+        background: linear-gradient(135deg, #00C853 0%, #00B749 100%);
         color: var(--white);
-        padding: 0.9rem 1.5rem;
+        padding: 1.1rem 1.5rem;
         border: none;
-        border-radius: 25px;
-        font-size: 1rem;
-        font-weight: 600;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: 700;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
-        box-shadow: 0 4px 15px rgba(0, 185, 0, 0.3);
+        gap: 0.6rem;
+        box-shadow: 0 6px 20px rgba(0, 185, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: all 0.3s;
         text-decoration: none;
+        animation: pulse-glow 2s ease-in-out infinite;
+        letter-spacing: 0.5px;
+    }
+    
+    @keyframes pulse-glow {
+        0%, 100% {
+            box-shadow: 0 6px 20px rgba(0, 185, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        50% {
+            box-shadow: 0 8px 25px rgba(0, 185, 0, 0.6), 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
     }
     
     .mobile-footer-cta-button:active {
         transform: scale(0.98);
+        background: linear-gradient(135deg, #00B749 0%, #00A540 100%);
     }
     
     .mobile-footer-cta-button .line-icon {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         object-fit: contain;
     }
     
