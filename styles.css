@@ -67,11 +67,11 @@ body {
 
 @media (max-width: 767px) {
     .header {
-        padding: 1rem 0;
+        padding: 0.8rem 0;
     }
     
     .logo-image-large {
-        height: 50px;
+        height: 40px;
     }
 }
 
