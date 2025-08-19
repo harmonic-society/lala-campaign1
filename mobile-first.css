@@ -239,24 +239,24 @@ body {
     margin-bottom: 1rem;
     font-weight: 900;
     color: #FFFFFF;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     letter-spacing: -0.02em;
     animation: titleReveal 1s ease-out;
+    animation-fill-mode: backwards;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 @keyframes titleReveal {
     0% {
         opacity: 0;
-        transform: scale(0.8) translateY(20px);
-    }
-    50% {
-        transform: scale(1.05) translateY(-5px);
+        transform: translateY(20px) translateZ(0);
     }
     100% {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: translateY(0) translateZ(0);
     }
 }
 
@@ -275,8 +275,11 @@ body {
     margin-bottom: 0.5rem;
     color: #FFFFFF;
     animation: slideInRight 0.8s ease-out 0.2s both;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+    animation-fill-mode: backwards;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
 }
 
 @keyframes slideInLeft {
@@ -293,11 +296,11 @@ body {
 @keyframes slideInRight {
     0% {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(30px) translateZ(0);
     }
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0) translateZ(0);
     }
 }
 
@@ -305,34 +308,22 @@ body {
     color: #FFD700;
     font-weight: 900;
     position: relative;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-    animation: goldPulse 2s ease-in-out infinite;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    /* Remove animation to prevent blur */
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+    will-change: auto;
 }
 
-@keyframes goldPulse {
-    0%, 100% { 
-        color: #FFD700;
-    }
-    50% { 
-        color: #FFC700;
-    }
-}
+/* Removed goldPulse animation to prevent blur */
 
 .lala-highlight::after {
-    content: '✨';
-    position: absolute;
-    top: -10px;
-    right: -20px;
-    font-size: 0.5em;
-    animation: sparkle 1s ease-in-out infinite;
-    text-shadow: none;
+    /* Removed sparkle to prevent blur */
+    display: none;
 }
 
-@keyframes sparkle {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.2) rotate(180deg); }
-}
+/* Removed sparkle animation to prevent blur */
 
 .hero-subtitle {
     font-size: 1.1rem;
@@ -531,12 +522,8 @@ body {
 }
 
 .badge::before {
-    content: '✨';
-    position: absolute;
-    top: -5px;
-    right: 10px;
-    font-size: 0.7em;
-    animation: sparkle 1s ease-in-out infinite;
+    /* Removed sparkle to prevent blur */
+    display: none;
 }
 
 .badge:nth-child(2)::before {
