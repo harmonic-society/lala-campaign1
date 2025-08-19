@@ -61,13 +61,14 @@ body {
 }
 
 .logo {
-    font-size: 1.1rem;
-    font-weight: bold;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: inline-flex;
+    align-items: center;
     flex-shrink: 0;
+}
+
+.logo-image {
+    height: 35px;
+    width: auto;
 }
 
 /* Mobile Navigation - Hamburger Menu */
@@ -1057,8 +1058,8 @@ body {
         padding: 1rem 24px;
     }
     
-    .logo {
-        font-size: 1.3rem;
+    .logo-image {
+        height: 45px;
     }
     
     .mobile-menu-toggle {
@@ -1171,8 +1172,8 @@ body {
     }
     
     /* Desktop Header */
-    .logo {
-        font-size: 1.5rem;
+    .logo-image {
+        height: 50px;
     }
     
     .nav {

@@ -51,12 +51,13 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
 }
 
 /* Desktop Navigation (Default) */
@@ -496,8 +497,8 @@ body {
         padding: 0.75rem 16px;
     }
     
-    .logo {
-        font-size: 1.2rem;
+    .logo-image {
+        height: 40px;
     }
     
     /* Hide desktop nav, show mobile */

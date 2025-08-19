@@ -48,11 +48,15 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
     position: relative;
     display: inline-flex;
     align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    display: block;
 }
 
 .logo-text {
@@ -2335,22 +2339,18 @@ body {
     }
     
     .logo {
-        font-size: 0.9rem;
         position: relative;
         display: flex !important;
         align-items: center;
-        gap: 0.25rem;
         flex-shrink: 0;
         z-index: 1001;
         visibility: visible !important;
         opacity: 1 !important;
     }
     
-    .logo::before {
-        content: '🌍';
-        font-size: 1rem;
-        animation: rotate 4s linear infinite;
-        display: inline-block;
+    .logo-image {
+        height: 35px;
+        width: auto;
     }
     
     .logo-text {
