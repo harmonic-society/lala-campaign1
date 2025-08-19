@@ -1427,7 +1427,36 @@ body {
 
 .stars {
     color: #FFB800;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.stars i {
+    margin: 0 1px;
+}
+
+/* Font Awesome icon styling */
+.benefit-icon i {
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.arrow i,
+.arrow-icon i,
+.arrow-tip i {
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+.sparkle i,
+.deco-icon i,
+.flow-spark i {
+    color: #FFD700;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
 }
 
 .evidence-caption {

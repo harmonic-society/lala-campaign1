@@ -367,52 +367,47 @@ body {
 .hero-actions {
     width: 100%;
     position: relative;
+    margin-top: 2rem;
 }
 
-/* Premium campaign badge */
-.hero-actions::before {
-    content: '期間限定特別キャンペーン';
-    display: inline-block;
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    color: #1a1a1a;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.85rem;
+/* Campaign Badge Container */
+.campaign-badge-container {
+    text-align: center;
     margin-bottom: 1.5rem;
-    box-shadow: 
-        0 4px 15px rgba(255, 215, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-    position: relative;
-    letter-spacing: 0.5px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.campaign-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #FFD700;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    animation: subtleGlow 3s ease-in-out infinite;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
 }
 
-.hero-actions::before::before {
-    content: '\2605';
-    position: absolute;
-    left: 10px;
-    font-size: 1em;
+.campaign-badge i {
+    margin: 0 8px;
+    font-size: 0.9em;
+    opacity: 0.8;
 }
 
-.hero-actions::before::after {
-    content: '\2605';
-    position: absolute;
-    right: 10px;
-    font-size: 1em;
-}
-
-@keyframes subtleGlow {
-    0%, 100% { 
-        box-shadow: 
-            0 4px 15px rgba(255, 215, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.5);
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    50% { 
-        box-shadow: 
-            0 6px 20px rgba(255, 215, 0, 0.5),
-            inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -511,91 +506,69 @@ body {
     50% { background: rgba(255, 255, 255, 0.3); }
 }
 
-.language-badges {
-    margin-top: 1.5rem;
+/* Hero Features */
+.hero-features {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 0.75rem;
-    animation: badgesFade 1.5s ease-out 0.8s both;
+    justify-content: center;
+    margin: 1.5rem 0;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
-@keyframes badgesFade {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.badge {
-    background: linear-gradient(135deg, #2D3748 0%, #1A202C 100%);
-    color: #FFFFFF;
-    padding: 0.6rem 1.8rem;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    box-shadow: 
-        0 4px 15px rgba(0,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.1);
-    width: 200px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255,215,0,0.2);
-    letter-spacing: 0.3px;
+.feature-badge {
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    background-blend-mode: multiply;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
 }
 
-.badge::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, 
-        transparent 30%, 
-        rgba(255,215,0,0.1) 50%, 
-        transparent 70%);
-    animation: shimmer 3s ease-in-out infinite;
-    transform: rotate(45deg);
+.feature-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes shimmer {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+.feature-badge i {
+    font-size: 1em;
+    opacity: 0.9;
 }
 
-.badge:nth-child(1) {
-    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
-    position: relative;
-    padding-left: 2.5rem;
+/* Trust Indicators */
+.trust-indicators {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    opacity: 0.8;
 }
 
-.badge:nth-child(1)::after {
-    content: '\1F30D';
-    position: absolute;
-    left: 1rem;
-    font-size: 1.1em;
+.trust-item {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.badge:nth-child(2) {
-    background: linear-gradient(135deg, #065F46 0%, #047857 100%);
-    position: relative;
-    padding-left: 2.5rem;
+.trust-item i {
+    font-size: 0.9em;
 }
 
-.badge:nth-child(2)::after {
-    content: '\1F468\200D\1F3EB';
-    position: absolute;
-    left: 1rem;
-    font-size: 1.1em;
+/* Remove old badge styles - now using feature-badge */
+.badge {
+    display: none;
 }
+
+
 
 /* Mobile Hero Visual - Hidden on mobile since using background image */
 .hero-visual {
@@ -1473,10 +1446,20 @@ body {
         }
     }
     
-    .hero-actions::before {
+    /* Tablet adjustments */
+    .campaign-badge {
+        font-size: 0.85rem;
+        padding: 10px 24px;
+    }
+    
+    .hero-features {
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+    
+    .feature-badge {
         font-size: 0.9rem;
-        display: inline-block;
-        padding: 12px 28px;
+        padding: 10px 20px;
     }
     
     .cta-btn.primary.pulse {
@@ -1485,14 +1468,6 @@ body {
         font-size: 1.2rem;
     }
     
-    .language-badges {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .badge {
-        width: auto;
-    }
     
     .badge {
         width: auto;
@@ -1617,10 +1592,29 @@ body {
         text-align: left;
     }
     
-    .hero-actions::before {
+    /* Desktop adjustments */
+    .campaign-badge-container {
         text-align: left;
-        display: inline-block;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .campaign-badge {
+        font-size: 0.9rem;
+        padding: 12px 28px;
+    }
+    
+    .hero-features {
+        justify-content: flex-start;
+        margin: 2rem 0 2.5rem;
+    }
+    
+    .feature-badge {
+        font-size: 0.95rem;
+    }
+    
+    .trust-indicators {
+        justify-content: flex-start;
+        margin-top: 1.5rem;
     }
     
     .cta-btn.primary.pulse {
@@ -1629,9 +1623,6 @@ body {
         max-width: 400px;
     }
     
-    .language-badges {
-        justify-content: flex-start;
-    }
     
     /* Hide hero visual on desktop since using background image */
     .hero-visual {
@@ -1720,10 +1711,19 @@ body {
         max-width: 450px;
     }
     
-    .hero-actions::before {
+    /* Large desktop adjustments */
+    .campaign-badge {
         font-size: 0.95rem;
-        display: inline-block;
-        padding: 12px 32px;
+        padding: 14px 32px;
+    }
+    
+    .hero-features {
+        gap: 1.25rem;
+    }
+    
+    .feature-badge {
+        font-size: 1rem;
+        padding: 12px 24px;
     }
     
     .section-title {
