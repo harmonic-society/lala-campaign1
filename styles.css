@@ -74,6 +74,19 @@ body {
     margin-left: auto;
 }
 
+/* Mobile line break utilities */
+.mobile-break {
+    display: none;
+}
+
+.mobile-no-break {
+    display: inline;
+}
+
+.mobile-break-before::before {
+    content: "";
+}
+
 @media (max-width: 767px) {
     .header {
         padding: 0.8rem 0;
@@ -85,6 +98,20 @@ body {
     
     .campaign-text {
         font-size: 1.1rem;
+    }
+    
+    .mobile-break {
+        display: inline;
+    }
+    
+    .mobile-no-break {
+        display: inline-block;
+        white-space: nowrap;
+    }
+    
+    .mobile-break-before::before {
+        content: "\A";
+        white-space: pre;
     }
 }
 
