@@ -553,6 +553,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    text-decoration: none;
 }
 
 .cta-btn .line-icon {
@@ -2499,6 +2500,7 @@ body {
         box-shadow: 0 4px 15px rgba(0, 185, 0, 0.3);
         cursor: pointer;
         transition: all 0.3s;
+        text-decoration: none;
     }
     
     .mobile-footer-cta-button:active {
