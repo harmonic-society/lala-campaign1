@@ -164,7 +164,7 @@ body {
     overflow: hidden;
 }
 
-/* Dark overlay for text readability */
+/* Elegant overlay for text readability */
 .hero::before {
     content: '';
     position: absolute;
@@ -172,23 +172,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, 
-        rgba(249, 115, 22, 0.85) 0%, 
-        rgba(255, 23, 68, 0.85) 50%, 
-        rgba(139, 69, 19, 0.85) 100%);
-    background-size: 200% 200%;
-    animation: gradientShift 12s ease infinite;
+    background: linear-gradient(180deg, 
+        rgba(0, 0, 0, 0.2) 0%, 
+        rgba(0, 0, 0, 0.3) 50%, 
+        rgba(0, 0, 0, 0.4) 100%);
     pointer-events: none;
     z-index: 0;
 }
 
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Subtle pattern overlay */
+/* Premium golden shimmer effect */
 .hero::after {
     content: '';
     position: absolute;
@@ -196,11 +188,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background: radial-gradient(circle at 20% 30%, 
+        rgba(255, 215, 0, 0.1) 0%, 
+        transparent 40%);
     pointer-events: none;
     z-index: 0;
+    animation: shimmerMove 20s ease-in-out infinite;
 }
+
+@keyframes shimmerMove {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
 
 .hero-container {
     padding: 0 var(--mobile-padding);
@@ -369,36 +369,62 @@ body {
     position: relative;
 }
 
-/* Add urgency indicator */
+/* Premium campaign badge */
 .hero-actions::before {
-    content: '🔥 期間限定キャンペーン中 🔥';
-    display: block;
-    color: #FFFFFF;
-    background: rgba(255, 23, 68, 0.9);
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    animation: flash 1s ease-in-out infinite;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    content: '期間限定特別キャンペーン';
     display: inline-block;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #1a1a1a;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 
+        0 4px 15px rgba(255, 215, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    position: relative;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    animation: subtleGlow 3s ease-in-out infinite;
 }
 
-@keyframes flash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+.hero-actions::before::before {
+    content: '\2605';
+    position: absolute;
+    left: 10px;
+    font-size: 1em;
 }
+
+.hero-actions::before::after {
+    content: '\2605';
+    position: absolute;
+    right: 10px;
+    font-size: 1em;
+}
+
+@keyframes subtleGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 4px 15px rgba(255, 215, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+    50% { 
+        box-shadow: 
+            0 6px 20px rgba(255, 215, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+}
+
 
 .cta-btn.primary.pulse {
-    background: linear-gradient(135deg, #00C300 0%, #00E000 100%);
+    background: linear-gradient(135deg, #00C300 0%, #00B300 100%);
     color: white;
     padding: 1.2rem 2rem;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
-    font-size: 1.15rem;
-    font-weight: 800;
+    font-size: 1.1rem;
+    font-weight: 700;
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
@@ -406,28 +432,27 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
-    box-shadow: 0 15px 40px rgba(0, 200, 0, 0.4), inset 0 2px 10px rgba(255,255,255,0.3);
+    box-shadow: 
+        0 10px 30px rgba(0, 180, 0, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.2);
     position: relative;
     overflow: hidden;
-    animation: ctaPulse 2s ease-in-out infinite, ctaBounce 1s ease-out 0.5s;
-    transform: scale(1.05);
+    animation: ctaBounce 1s ease-out 0.5s;
+    transform: scale(1);
+    transition: all 0.3s ease;
 }
 
-@keyframes ctaPulse {
-    0%, 100% {
-        transform: scale(1.05);
-        box-shadow: 0 15px 40px rgba(0, 200, 0, 0.4), inset 0 2px 10px rgba(255,255,255,0.3);
-    }
-    50% {
-        transform: scale(1.08);
-        box-shadow: 0 20px 50px rgba(0, 200, 0, 0.6), inset 0 2px 15px rgba(255,255,255,0.4);
-    }
+.cta-btn.primary.pulse:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 15px 40px rgba(0, 180, 0, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.3);
 }
+
 
 @keyframes ctaBounce {
-    0% { transform: translateY(100px) scale(0.8); opacity: 0; }
-    50% { transform: translateY(-10px) scale(1.1); }
-    100% { transform: translateY(0) scale(1.05); opacity: 1; }
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 .cta-btn.primary.pulse::before {
@@ -507,27 +532,69 @@ body {
 }
 
 .badge {
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--primary-color);
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #2D3748 0%, #1A202C 100%);
+    color: #FFFFFF;
+    padding: 0.6rem 1.8rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 
+        0 4px 15px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.1);
     width: 200px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    border: 2px solid rgba(255,215,0,0.3);
+    border: 1px solid rgba(255,215,0,0.2);
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(10px);
+    background-blend-mode: multiply;
 }
 
 .badge::before {
-    /* Removed sparkle to prevent blur */
-    display: none;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(255,215,0,0.1) 50%, 
+        transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+    transform: rotate(45deg);
 }
 
-.badge:nth-child(2)::before {
-    animation-delay: 0.5s;
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.badge:nth-child(1) {
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.badge:nth-child(1)::after {
+    content: '\1F30D';
+    position: absolute;
+    left: 1rem;
+    font-size: 1.1em;
+}
+
+.badge:nth-child(2) {
+    background: linear-gradient(135deg, #065F46 0%, #047857 100%);
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.badge:nth-child(2)::after {
+    content: '\1F468\200D\1F3EB';
+    position: absolute;
+    left: 1rem;
+    font-size: 1.1em;
 }
 
 /* Mobile Hero Visual - Hidden on mobile since using background image */
@@ -1407,8 +1474,9 @@ body {
     }
     
     .hero-actions::before {
-        font-size: 1rem;
+        font-size: 0.9rem;
         display: inline-block;
+        padding: 12px 28px;
     }
     
     .cta-btn.primary.pulse {
@@ -1553,8 +1621,6 @@ body {
         text-align: left;
         display: inline-block;
         margin-bottom: 1.5rem;
-        background: rgba(255, 23, 68, 0.9);
-        padding: 10px 20px;
     }
     
     .cta-btn.primary.pulse {
@@ -1655,9 +1721,9 @@ body {
     }
     
     .hero-actions::before {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         display: inline-block;
-        padding: 10px 24px;
+        padding: 12px 32px;
     }
     
     .section-title {
