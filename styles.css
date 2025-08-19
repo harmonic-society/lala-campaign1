@@ -2150,6 +2150,43 @@ body {
     opacity: 0.9;
 }
 
+/* Secondary CTA */
+.cta-secondary {
+    margin-top: 2rem;
+}
+
+.cta-or {
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.cta-btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--white);
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+.cta-btn.secondary i {
+    font-size: 1rem;
+}
+
 /* Footer - Warm Finish */
 .footer {
     background: linear-gradient(135deg, #8B6F47 0%, #6B5B5B 100%);

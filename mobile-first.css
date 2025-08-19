@@ -795,7 +795,7 @@ body {
 }
 
 .emphasis {
-    font-size: 1.1rem !important;
+    font-size: 0.95rem !important;
     font-weight: bold;
     color: var(--secondary-color);
     margin: 1.5rem 0 !important;
@@ -1237,6 +1237,36 @@ body {
     margin-top: 1rem;
     opacity: 0.9;
     font-size: 0.85rem;
+}
+
+/* Secondary CTA - Mobile */
+.cta-secondary {
+    margin-top: 1.5rem;
+}
+
+.cta-or {
+    color: var(--white);
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+}
+
+.cta-btn.secondary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--white);
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.secondary i {
+    font-size: 0.9rem;
 }
 
 /* Mobile Footer */
