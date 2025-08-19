@@ -34,10 +34,8 @@ body {
 .header {
     background: var(--white);
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    position: fixed;
+    position: relative;
     width: 100%;
-    top: 0;
-    z-index: 9999;
     padding: 1.5rem 0;
 }
 
@@ -82,7 +80,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding: 120px 0 60px;
+    padding: 60px 0 60px;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -2146,14 +2144,36 @@ body {
     50% { transform: translateY(-20px) rotate(5deg); }
 }
 
-.footer-logo {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #FFB5A7, #FFD700);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo-image {
+    height: 80px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-image:hover {
+    opacity: 1;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .footer-logo-image {
+        height: 60px;
+    }
 }
 
 /* Responsive Design for Hero */
