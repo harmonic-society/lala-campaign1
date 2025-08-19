@@ -2064,6 +2064,26 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
+.cta-title-line1,
+.cta-title-line2 {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-title-line1 {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    .cta-title-line2 {
+        display: block;
+    }
+}
+
 .cta-subtitle {
     font-size: 1.4rem;
     color: rgba(255, 255, 255, 0.9);
