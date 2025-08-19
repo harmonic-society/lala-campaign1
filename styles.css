@@ -47,7 +47,7 @@ body {
 .header-content {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -63,14 +63,15 @@ body {
 }
 
 .campaign-text {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     background: linear-gradient(135deg, #FFB5A7 0%, #FFD700 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: pulse 2s infinite;
     white-space: nowrap;
+    margin-left: auto;
 }
 
 @media (max-width: 767px) {
@@ -78,16 +79,12 @@ body {
         padding: 0.8rem 0;
     }
     
-    .header-content {
-        gap: 1rem;
-    }
-    
     .logo-image {
         height: 35px;
     }
     
     .campaign-text {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
 }
 
