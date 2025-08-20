@@ -2255,6 +2255,25 @@ body {
     text-align: center;
 }
 
+.footer-company {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.footer-company a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.footer-company a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
 @media (max-width: 767px) {
     .footer-logo-image {
         height: 60px;
