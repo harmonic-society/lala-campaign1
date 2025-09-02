@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 // Also track as a standard event with more details
-                gtag('event', 'generate_lead', {
+                gtag('event', 'line_registration_click', {
                     'value': 1100,  // Trial lesson price
                     'currency': 'JPY',
                     'event_category': 'engagement',
