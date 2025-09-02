@@ -222,3 +222,83 @@ document.querySelectorAll('.cta-btn').forEach(button => {
         // Here you would send analytics data
     });
 });
+
+// Track LINE registration clicks for Google Ads
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all LINE registration links
+    const lineRegistrationLinks = document.querySelectorAll('a[href*="lin.ee/LhDkFC8"]');
+    
+    lineRegistrationLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Get button context for better tracking
+            let buttonLocation = 'unknown';
+            
+            // Determine button location based on parent elements or classes
+            if (this.closest('.hero')) {
+                buttonLocation = 'hero_section';
+            } else if (this.closest('.cta-section')) {
+                buttonLocation = 'cta_section';
+            } else if (this.closest('.mobile-footer-cta')) {
+                buttonLocation = 'mobile_footer';
+            } else if (this.closest('.modal')) {
+                buttonLocation = 'modal';
+            }
+            
+            // Send event to Google Ads
+            if (typeof gtag !== 'undefined') {
+                // Track as a conversion event
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17505940632/click',
+                    'event_callback': function() {
+                        console.log('Google Ads conversion tracked');
+                    }
+                });
+                
+                // Also track as a standard event with more details
+                gtag('event', 'generate_lead', {
+                    'value': 1100,  // Trial lesson price
+                    'currency': 'JPY',
+                    'event_category': 'engagement',
+                    'event_label': 'LINE_registration_' + buttonLocation,
+                    'method': 'LINE'
+                });
+                
+                // Track page_view for remarketing
+                gtag('event', 'page_view', {
+                    'send_to': 'AW-17505940632',
+                    'value': 'line_click',
+                    'items': [{
+                        'id': 'line_registration',
+                        'location': buttonLocation,
+                        'campaign': 'autumn_campaign_2024'
+                    }]
+                });
+            }
+            
+            console.log('LINE registration link clicked:', buttonLocation);
+        });
+    });
+    
+    // Track form submission from contact page link
+    const contactFormLink = document.querySelector('a[href*="lala-global-language.com/contact/"]');
+    if (contactFormLink) {
+        contactFormLink.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'begin_checkout', {
+                    'value': 1100,
+                    'currency': 'JPY',
+                    'event_category': 'engagement',
+                    'event_label': 'contact_form_click',
+                    'items': [{
+                        'id': 'trial_lesson',
+                        'name': '体験レッスン',
+                        'category': 'language_lesson',
+                        'price': 1100,
+                        'quantity': 1
+                    }]
+                });
+            }
+            console.log('Contact form link clicked');
+        });
+    }
+});
