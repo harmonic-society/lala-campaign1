@@ -2,7 +2,7 @@
 
 ## ヒーローセクションの画像
 
-現在、プレースホルダー画像を使用しています。実際のAdobe Stock画像に置き換える手順：
+このドキュメントでは、Adobe Stock画像を使用する際の手順を説明します。
 
 ### 推奨検索キーワード
 - "woman learning languages online"
